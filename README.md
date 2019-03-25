@@ -85,8 +85,8 @@ Please specify a network name to administer (no spaces, hyphens or capital lette
 
 Sweet, you can set this via --network=poa next time!
 
-[32mINFO [0m[03-25|17:45:55.524] Administering Ethereum network           [32mname[0m=poa
-[33mWARN [0m[03-25|17:45:55.553] No previous configurations found         [33mpath[0m=.puppeth\\poa
+ [32mINFO  [0m[03-25|17:45:55.524] Administering Ethereum network            [32mname [0m=poa
+ [33mWARN  [0m[03-25|17:45:55.553] No previous configurations found          [33mpath [0m=.puppeth\\poa
 ```
 接著這邊要選擇2，來建立一個創世區塊檔  
 ```
@@ -141,7 +141,7 @@ Should the precompile-addresses (0x1 .. 0xff) be pre-funded with 1 wei? (advisab
 ```
 Specify your chain/network ID if you want an explicit one (default = random)
 > 15
-[32mINFO [0m[03-25|18:19:31.099] Configured new genesis block
+ [32mINFO  [0m[03-25|18:19:31.099] Configured new genesis block
 ```
 ### 網路ID:    
 | ID | chain                         |
