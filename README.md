@@ -85,8 +85,8 @@ Please specify a network name to administer (no spaces, hyphens or capital lette
 
 Sweet, you can set this via --network=poa next time!
 
-[32mINFO [0m[03-25|17:45:55.524] Administering Ethereum network           [32mname[0m=poa
-[33mWARN [0m[03-25|17:45:55.553] No previous configurations found         [33mpath[0m=.puppeth\\poa
+[32mINFO [0m[03-25|17:45:55.524] Administering Ethereum network           [32mname[0m=poa
+[33mWARN [0m[03-25|17:45:55.553] No previous configurations found         [33mpath[0m=.puppeth\\poa
 ```
 接著這邊要選擇2，來建立一個創世區塊檔  
 ```
@@ -141,7 +141,7 @@ Should the precompile-addresses (0x1 .. 0xff) be pre-funded with 1 wei? (advisab
 ```
 Specify your chain/network ID if you want an explicit one (default = random)
 > 15
-[32mINFO [0m[03-25|18:19:31.099] Configured new genesis block
+[32mINFO [0m[03-25|18:19:31.099] Configured new genesis block
 ```
 ### 網路ID:   
 以下簡單介紹幾個常看到的網路ID:   
@@ -177,10 +177,10 @@ What would you like to do? (default = stats)
 Which folder to save the genesis specs into? (default = current)
   Will create poa.json, poa-aleth.json, poa-harmony.json, poa-parity.json
 >
-[32mINFO [0m[03-26|10:45:07.727] Saved native genesis chain spec          [32mpath[0m=poa.json
+[32mINFO [0m[03-26|10:45:07.727] Saved native genesis chain spec          [32mpath[0m=poa.json
 [31mERROR[0m[03-26|10:45:07.727] Failed to create Aleth chain spec        [31merr[0m="unsupported consensus engine"
-[31mERROR[0m[03-26|10:45:07.728] Failed to create Parity chain spec       [31merr[0m="unsupported consensus engine"
-[32mINFO [0m[03-26|10:45:07.729] Saved genesis chain spec                 [32mclient[0m=harmony [32mpath[0m=poa-harmony.json
+[31mERROR[0m[03-26|10:45:07.728] Failed to create Parity chain spec       [31merr[0m="unsupported consensus engine"
+[32mINFO [0m[03-26|10:45:07.729] Saved genesis chain spec                 [32mclient[0m=harmony [32mpath[0m=poa-harmony.json
 ```
 完成後會跳會下面這個訊息，直接按`Ctrl + C`離開。
 ```
@@ -189,7 +189,7 @@ What would you like to do? (default = stats)
  2. Manage existing genesis
  3. Track new remote server
  4. Deploy network components
-> [35mCRIT [0m[03-26|10:49:18.413] Failed to read user input               [35merr[0m=EOF
+> [35mCRIT [0m[03-26|10:49:18.413] Failed to read user input               [35merr[0m=EOF
 ```
 # 生成的poa.json檔
 可以用記事本來開啟新建的poa.json檔，內容如下
