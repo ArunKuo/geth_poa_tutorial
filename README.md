@@ -1,5 +1,3 @@
-## 施工中......
-
 # Windows系統-Geth PoA 私有鏈架設筆記
 # 環境
 
@@ -145,7 +143,7 @@ Specify your chain/network ID if you want an explicit one (default = random)
 ```
 ### 網路ID:   
 以下簡單介紹幾個常看到的網路ID:   
-沒列舉到的部分，可以透過下方資料來源去觀看。
+沒列舉到的部分，可以透過下方資料來源去觀看。  
 | ID | chain                         |
 |----|-------------------------------|
 | 0  | Olympic (disused)             |
