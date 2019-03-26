@@ -176,7 +176,7 @@ What would you like to do? (default = stats)
 Which folder to save the genesis specs into? (default = current)
   Will create poa.json, poa-aleth.json, poa-harmony.json, poa-parity.json
 >
-[32mINFO [0m[03-26|10:45:07.727] Saved native genesis chain spec          [32mpath[0m=poa.json
+[32mINFO [0m[03-26|10:45:07.727] Saved native genesis chain spec          [32mpath[0m=poa.json
 [31mERROR[0m[03-26|10:45:07.727] Failed to create Aleth chain spec        [31merr[0m="unsupported consensus engine"
 [31mERROR[0m[03-26|10:45:07.728] Failed to create Parity chain spec       [31merr[0m="unsupported consensus engine"
 [32mINFO [0m[03-26|10:45:07.729] Saved genesis chain spec                 [32mclient[0m=harmony [32mpath[0m=poa-harmony.json
