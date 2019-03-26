@@ -178,9 +178,9 @@ Which folder to save the genesis specs into? (default = current)
   Will create poa.json, poa-aleth.json, poa-harmony.json, poa-parity.json
 >
 [32mINFO [0m[03-26|10:45:07.727] Saved native genesis chain spec          [32mpath[0m=poa.json
-[31mERROR[0m[03-26|10:45:07.727] Failed to create Aleth chain spec        [31merr[0m="unsupported consensus engine"
-[31mERROR[0m[03-26|10:45:07.728] Failed to create Parity chain spec       [31merr[0m="unsupported consensus engine"
-[32mINFO [0m[03-26|10:45:07.729] Saved genesis chain spec                 [32mclient[0m=harmony [32mpath[0m=poa-harmony.json
+[31mERROR[0m[03-26|10:45:07.727] Failed to create Aleth chain spec        [31merr[0m="unsupported consensus engine"
+[31mERROR[0m[03-26|10:45:07.728] Failed to create Parity chain spec       [31merr[0m="unsupported consensus engine"
+[32mINFO [0m[03-26|10:45:07.729] Saved genesis chain spec                 [32mclient[0m=harmony [32mpath[0m=poa-harmony.json
 ```
 完成後會跳會下面這個訊息，直接按`Ctrl + C`離開。
 ```
@@ -352,9 +352,9 @@ at block: 0 (Mon, 25 Mar 2019 17:54:30 CST)
 `geth --datadir node2 --nodiscover --syncmode "full" --networkid 15 --port 30002 --rpc --rpcport 8545 console`
 ## 使用admin.addPeer()方式新增節點
 在節點一的命令提示字元輸入`admin.addPeer("enode://7ac3c5fc0d04324915b9376258e4a211c560271b6a25854177d899de29e377be4286ca1df867f2b0aa31eb2f06f80a039067fcb5981442447479c2115ad080d3@Node2 IP Address:30002?discport=0")`
-```
-`@Node2 IP Address:30002`的部分，IP請輸入電腦IP位置  
 
+`@Node2 IP Address:30002`的部分，IP請輸入電腦IP位置  
+```
 > admin.addPeer("enode://7ac3c5fc0d04324915b9376258e4a211c560271b6a25854177d899de29e377be4286ca1df867f2b0aa31eb2f06f80a039067fcb5981442447479c2115ad080d3@Node2 IP Address:30002?discport=0")
 true
 ```
