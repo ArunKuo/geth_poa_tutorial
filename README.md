@@ -85,13 +85,8 @@ Please specify a network name to administer (no spaces, hyphens or capital lette
 
 Sweet, you can set this via --network=poa next time!
 
-<<<<<<< HEAD
 [32mINFO [0m[03-25|17:45:55.524] Administering Ethereum network           [32mname[0m=poa
 [33mWARN [0m[03-25|17:45:55.553] No previous configurations found         [33mpath[0m=.puppeth\\poa
-=======
- [32mINFO  [0m[03-25|17:45:55.524] Administering Ethereum network            [32mname [0m=poa
- [33mWARN  [0m[03-25|17:45:55.553] No previous configurations found          [33mpath [0m=.puppeth\\poa
->>>>>>> 327374d0a2a4bc5135139cd4c331907eb158aaa4
 ```
 接著這邊要選擇2，來建立一個創世區塊檔  
 ```
@@ -146,7 +141,7 @@ Should the precompile-addresses (0x1 .. 0xff) be pre-funded with 1 wei? (advisab
 ```
 Specify your chain/network ID if you want an explicit one (default = random)
 > 15
- [32mINFO  [0m[03-25|18:19:31.099] Configured new genesis block
+[32mINFO [0m[03-25|18:19:31.099] Configured new genesis block
 ```
 ### 網路ID:   
 以下簡單介紹幾個常看到的網路ID:   
@@ -161,7 +156,6 @@ Specify your chain/network ID if you want an explicit one (default = random)
 | 5  | Goerli  (cross-client PoA testnet) |
 
 資料來源:  
-<<<<<<< HEAD
 [Ethereum Wire Protocol (ETH)](https://github.com/ethereum/devp2p/blob/master/caps/eth.md#newblockhashes-0x01)、[How to select a network id or is there a list of network ids?](https://ethereum.stackexchange.com/questions/17051/how-to-select-a-network-id-or-is-there-a-list-of-network-ids)  
 
 這邊兩個都選擇2來進行檔案的輸出   
@@ -293,6 +287,3 @@ at block: 0 (Mon, 25 Mar 2019 17:54:30 CST)
 9.04625697166532776746648320380374280103671755200316906558262375061821325312e+74
 ```
 
-=======
-[Ethereum Wire Protocol (ETH)](https://github.com/ethereum/devp2p/blob/master/caps/eth.md#newblockhashes-0x01)、[How to select a network id or is there a list of network ids?](https://ethereum.stackexchange.com/questions/17051/how-to-select-a-network-id-or-is-there-a-list-of-network-ids)
->>>>>>> 327374d0a2a4bc5135139cd4c331907eb158aaa4
