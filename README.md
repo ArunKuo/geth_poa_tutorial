@@ -27,7 +27,7 @@ Step3. 選擇安裝路徑。我這邊直接選擇預設路徑。完成後按Inst
 
 ## 確認版本
 
-開啟命令提示字元，並輸入指令：`geth version` 來看GETH的版本資訊 
+開啟命令提示字元(以系統管理員身分執行)，並輸入指令：`geth version` 來看GETH的版本資訊 
 
 ```
 C:\>geth version      # 會顯示出GETH的版本資訊
@@ -85,8 +85,8 @@ Please specify a network name to administer (no spaces, hyphens or capital lette
 
 Sweet, you can set this via --network=poa next time!
 
-[32mINFO [0m[03-25|17:45:55.524] Administering Ethereum network           [32mname[0m=poa
-[33mWARN [0m[03-25|17:45:55.553] No previous configurations found         [33mpath[0m=.puppeth\\poa
+[32mINFO [0m[03-25|17:45:55.524] Administering Ethereum network           [32mname[0m=poa
+[33mWARN [0m[03-25|17:45:55.553] No previous configurations found         [33mpath[0m=.puppeth\\poa
 ```
 接著這邊要選擇2，來建立一個創世區塊檔  
 ```
@@ -143,15 +143,147 @@ Specify your chain/network ID if you want an explicit one (default = random)
 > 15
 [32mINFO [0m[03-25|18:19:31.099] Configured new genesis block
 ```
-### 網路ID:    
+### 網路ID:   
+以下簡單介紹幾個常看到的網路ID:   
+沒列舉到的部分，可以透過下方資料來源去觀看。
 | ID | chain                         |
 |----|-------------------------------|
 | 0  | Olympic (disused)             |
 | 1  | Frontier (now mainnet)        |
 | 2  | Morden (disused)              |
 | 3  | Ropsten (current PoW testnet) |
-| 4  | Rinkeby (current Geth PoW testnet) |
+| 4  | Rinkeby (current Geth PoA testnet) |
 | 5  | Goerli  (cross-client PoA testnet) |
 
 資料來源:  
-[Ethereum Wire Protocol (ETH)](https://github.com/ethereum/devp2p/blob/master/caps/eth.md#newblockhashes-0x01)、[How to select a network id or is there a list of network ids?](https://ethereum.stackexchange.com/questions/17051/how-to-select-a-network-id-or-is-there-a-list-of-network-ids)
+[Ethereum Wire Protocol (ETH)](https://github.com/ethereum/devp2p/blob/master/caps/eth.md#newblockhashes-0x01)、[How to select a network id or is there a list of network ids?](https://ethereum.stackexchange.com/questions/17051/how-to-select-a-network-id-or-is-there-a-list-of-network-ids)  
+
+這邊兩個都選擇2來進行檔案的輸出   
+```
+What would you like to do? (default = stats)
+ 1. Show network stats
+ 2. Manage existing genesis
+ 3. Track new remote server
+ 4. Deploy network components
+> 2  
+
+ 1. Modify existing fork rules
+ 2. Export genesis configurations
+ 3. Remove genesis configuration
+> 2
+```
+之後會問你要儲存在哪個資料夾中，直接按Enter直接幫你新增在當前資料夾中。  
+```
+Which folder to save the genesis specs into? (default = current)
+  Will create poa.json, poa-aleth.json, poa-harmony.json, poa-parity.json
+>
+[32mINFO [0m[03-26|10:45:07.727] Saved native genesis chain spec          [32mpath[0m=poa.json
+[31mERROR[0m[03-26|10:45:07.727] Failed to create Aleth chain spec        [31merr[0m="unsupported consensus engine"
+[31mERROR[0m[03-26|10:45:07.728] Failed to create Parity chain spec       [31merr[0m="unsupported consensus engine"
+[32mINFO [0m[03-26|10:45:07.729] Saved genesis chain spec                 [32mclient[0m=harmony [32mpath[0m=poa-harmony.json
+```
+完成後會跳會下面這個訊息，直接按`Ctrl + C`離開。
+```
+What would you like to do? (default = stats)
+ 1. Show network stats
+ 2. Manage existing genesis
+ 3. Track new remote server
+ 4. Deploy network components
+> [35mCRIT [0m[03-26|10:49:18.413] Failed to read user input               [35merr[0m=EOF
+```
+# 生成的poa.json檔
+可以用記事本來開啟新建的poa.json檔，內容如下
+```
+{
+  "config": {
+    "chainId": 15,
+    "homesteadBlock": 1,
+    "eip150Block": 2,
+    "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "eip155Block": 3,
+    "eip158Block": 3,
+    "byzantiumBlock": 4,
+    "constantinopleBlock": 5,
+    "clique": {
+      "period": 15,
+      "epoch": 30000
+    }
+  },
+  "nonce": "0x0",
+  "timestamp": "0x5c98a556",
+  "extraData": "0x00000000000000000000000000000000000000000000000000000000000000004b5d920a41e2c6b07cc422f66d4f9e8177530ae10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "gasLimit": "0x47b760",
+  "difficulty": "0x1",
+  "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "alloc": {
+    "4b5d920a41e2c6b07cc422f66d4f9e8177530ae1": {
+      "balance": "0x200000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "number": "0x0",
+  "gasUsed": "0x0",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+```
+主要要注意的地方是chainID與alloc的部分，`chainID`代表區塊鏈的網路號碼，而`alloc與ballance`代表要配置Ether(以太幣)的帳戶與以太幣數量。  
+
+# 建立創世區塊
+輸入指令`geth --datadir node init `來進行創世區塊的初始化  
+
+```
+c:\>geth --datadir node init poa.json
+INFO [03-26|11:09:13.007] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [03-26|11:09:13.036] Allocated cache and file handles         database=c:\\node\\geth\\chaindata cache=16 handles=16
+INFO [03-26|11:09:13.048] Writing custom genesis block
+INFO [03-26|11:09:13.049] Persisted trie from memory database      nodes=1 size=172.00B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [03-26|11:09:13.053] Successfully wrote genesis state         database=chaindata                 hash=43628c…9cd596
+INFO [03-26|11:09:13.056] Allocated cache and file handles         database=c:\\node\\geth\\lightchaindata cache=16 handles=16
+INFO [03-26|11:09:13.063] Writing custom genesis block
+INFO [03-26|11:09:13.066] Persisted trie from memory database      nodes=1 size=172.00B time=998.1µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [03-26|11:09:13.069] Successfully wrote genesis state         database=lightchaindata                 hash=43628c…9cd596
+```
+成功後node資料夾裡面就會出現名為**geth**的資料夾  
+![folder1](img/folder1.png)  
+
+# 啟動geth服務
+
+輸入指令  
+`geth --datadir node --nodiscover --networkid 15 --port 30001 --rpc --rpcport 8545`
+```
+c:\>geth --datadir node --nodiscover --networkid 15 --port 30001 --rpc --rpcport 8545
+INFO [03-26|11:31:48.068] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [03-26|11:31:48.095] Starting peer-to-peer node               instance=Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5
+INFO [03-26|11:31:48.097] Allocated cache and file handles         database=c:\\node\\geth\\chaindata cache=512 handles=8192
+INFO [03-26|11:31:48.165] Initialised chain configuration          config="{ChainID: 15 Homestead: 1 DAO: <nil> DAOSupport: false EIP150: 2 EIP155: 3 EIP158: 3 Byzantium: 4 Constantinople: 5  ConstantinopleFix: <nil> Engine: clique}"
+INFO [03-26|11:31:48.170] Initialising Ethereum protocol           versions="[63 62]" network=15
+INFO [03-26|11:31:48.185] Loaded most recent local header          number=0 hash=43628c…9cd596 td=1 age=17h37m18s
+INFO [03-26|11:31:48.188] Loaded most recent local full block      number=0 hash=43628c…9cd596 td=1 age=17h37m18s
+INFO [03-26|11:31:48.190] Loaded most recent local fast block      number=0 hash=43628c…9cd596 td=1 age=17h37m18s
+INFO [03-26|11:31:48.192] Loaded local transaction journal         transactions=0 dropped=0
+INFO [03-26|11:31:48.194] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [03-26|11:31:48.209] New local node record                    seq=4 id=7b263cac7915640c ip=127.0.0.1 udp=0 tcp=30001
+INFO [03-26|11:31:48.212] Started P2P networking                   self="enode://52fa0a6eb4af2303d282002258498fc0b5dfbfcee4e0a990342e08f54d203f7281d52e56ef070ec168430ce1aac83a43cf9e80b0f56b0272b516b5bae4957138@127.0.0.1:30001?discport=0"
+INFO [03-26|11:31:48.209] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ipc
+INFO [03-26|11:31:48.217] HTTP endpoint opened                     url=http://127.0.0.1:8545 cors= vhosts=localhost
+```
+然後開啟另一個命令提示字元，輸入指令`geth attach http://localhost:8545`來與geth互動  
+```
+c:\>geth attach http://localhost:8545
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5
+coinbase: 0x4b5d920a41e2c6b07cc422f66d4f9e8177530ae1
+at block: 0 (Mon, 25 Mar 2019 17:54:30 CST)
+ modules: eth:1.0 net:1.0 rpc:1.0 web3:1.0
+
+>
+```
+連結成功後另一個運行geth的命令提示字元會顯示`INFO [03-26|11:34:05.308] Etherbase automatically configured       address=0x4b5d920a41e2C6b07CC422f66D4f9e8177530aE1`這串訊息  
+## 顯示帳戶餘額
+在attach的命令提示字元視窗輸入指令`eth.getBalance(eth.accounts[0])`來取得帳戶餘額  
+```
+> eth.getBalance(eth.accounts[0])
+9.04625697166532776746648320380374280103671755200316906558262375061821325312e+74
+```
+
