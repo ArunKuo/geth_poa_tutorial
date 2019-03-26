@@ -249,41 +249,158 @@ INFO [03-26|11:09:13.069] Successfully wrote genesis state         database=ligh
 # 啟動geth服務
 
 輸入指令  
-`geth --datadir node --nodiscover --networkid 15 --port 30001 --rpc --rpcport 8545`
+`geth --datadir node --nodiscover --networkid 15 --port 30001 --rpc --rpcport 8545 console`
 ```
-c:\>geth --datadir node --nodiscover --networkid 15 --port 30001 --rpc --rpcport 8545
-INFO [03-26|11:31:48.068] Maximum peer count                       ETH=25 LES=0 total=25
-INFO [03-26|11:31:48.095] Starting peer-to-peer node               instance=Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5
-INFO [03-26|11:31:48.097] Allocated cache and file handles         database=c:\\node\\geth\\chaindata cache=512 handles=8192
-INFO [03-26|11:31:48.165] Initialised chain configuration          config="{ChainID: 15 Homestead: 1 DAO: <nil> DAOSupport: false EIP150: 2 EIP155: 3 EIP158: 3 Byzantium: 4 Constantinople: 5  ConstantinopleFix: <nil> Engine: clique}"
-INFO [03-26|11:31:48.170] Initialising Ethereum protocol           versions="[63 62]" network=15
-INFO [03-26|11:31:48.185] Loaded most recent local header          number=0 hash=43628c…9cd596 td=1 age=17h37m18s
-INFO [03-26|11:31:48.188] Loaded most recent local full block      number=0 hash=43628c…9cd596 td=1 age=17h37m18s
-INFO [03-26|11:31:48.190] Loaded most recent local fast block      number=0 hash=43628c…9cd596 td=1 age=17h37m18s
-INFO [03-26|11:31:48.192] Loaded local transaction journal         transactions=0 dropped=0
-INFO [03-26|11:31:48.194] Regenerated local transaction journal    transactions=0 accounts=0
-INFO [03-26|11:31:48.209] New local node record                    seq=4 id=7b263cac7915640c ip=127.0.0.1 udp=0 tcp=30001
-INFO [03-26|11:31:48.212] Started P2P networking                   self="enode://52fa0a6eb4af2303d282002258498fc0b5dfbfcee4e0a990342e08f54d203f7281d52e56ef070ec168430ce1aac83a43cf9e80b0f56b0272b516b5bae4957138@127.0.0.1:30001?discport=0"
-INFO [03-26|11:31:48.209] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ipc
-INFO [03-26|11:31:48.217] HTTP endpoint opened                     url=http://127.0.0.1:8545 cors= vhosts=localhost
-```
-然後開啟另一個命令提示字元，輸入指令`geth attach http://localhost:8545`來與geth互動  
-```
-c:\>geth attach http://localhost:8545
+c:\>geth --datadir node --nodiscover --networkid 15 --port 30001 --rpc --rpcport 8545 console
+INFO [03-26|12:05:39.684] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [03-26|12:05:39.711] Starting peer-to-peer node               instance=Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5
+INFO [03-26|12:05:39.714] Allocated cache and file handles         database=c:\\node\\geth\\chaindata cache=512 handles=8192
+INFO [03-26|12:05:39.733] Initialised chain configuration          config="{ChainID: 15 Homestead: 1 DAO: <nil> DAOSupport: false EIP150: 2 EIP155: 3 EIP158: 3 Byzantium: 4 Constantinople: 5  ConstantinopleFix: <nil> Engine: clique}"
+INFO [03-26|12:05:39.737] Initialising Ethereum protocol           versions="[63 62]" network=15
+INFO [03-26|12:05:39.775] Loaded most recent local header          number=0 hash=43628c…9cd596 td=1 age=18h11m9s
+INFO [03-26|12:05:39.778] Loaded most recent local full block      number=0 hash=43628c…9cd596 td=1 age=18h11m9s
+INFO [03-26|12:05:39.781] Loaded most recent local fast block      number=0 hash=43628c…9cd596 td=1 age=18h11m9s
+INFO [03-26|12:05:39.783] Loaded local transaction journal         transactions=0 dropped=0
+INFO [03-26|12:05:39.786] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [03-26|12:05:39.799] New local node record                    seq=8 id=7b263cac7915640c ip=127.0.0.1 udp=0 tcp=30001
+INFO [03-26|12:05:39.802] Started P2P networking                   self="enode://52fa0a6eb4af2303d282002258498fc0b5dfbfcee4e0a990342e08f54d203f7281d52e56ef070ec168430ce1aac83a43cf9e80b0f56b0272b516b5bae4957138@127.0.0.1:30001?discport=0"
+INFO [03-26|12:05:39.800] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ipc
+INFO [03-26|12:05:39.807] HTTP endpoint opened                     url=http://127.0.0.1:8545 cors= vhosts=localhost
 Welcome to the Geth JavaScript console!
 
 instance: Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5
+INFO [03-26|12:05:39.869] Etherbase automatically configured       address=0x4b5d920a41e2C6b07CC422f66D4f9e8177530aE1
 coinbase: 0x4b5d920a41e2c6b07cc422f66d4f9e8177530ae1
 at block: 0 (Mon, 25 Mar 2019 17:54:30 CST)
- modules: eth:1.0 net:1.0 rpc:1.0 web3:1.0
+ datadir: c:\node
+ modules: admin:1.0 clique:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
 
 >
 ```
-連結成功後另一個運行geth的命令提示字元會顯示`INFO [03-26|11:34:05.308] Etherbase automatically configured       address=0x4b5d920a41e2C6b07CC422f66D4f9e8177530aE1`這串訊息  
 ## 顯示帳戶餘額
-在attach的命令提示字元視窗輸入指令`eth.getBalance(eth.accounts[0])`來取得帳戶餘額  
+命令提示字元輸入指令`eth.getBalance(eth.accounts[0])`來取得帳戶餘額  
 ```
 > eth.getBalance(eth.accounts[0])
 9.04625697166532776746648320380374280103671755200316906558262375061821325312e+74
 ```
+## 確認節點訊息
+輸入指令`admin.nodeInfo.enode`來取的節點資訊
+```
+> admin.nodeInfo.enode
+"enode://52fa0a6eb4af2303d282002258498fc0b5dfbfcee4e0a990342e08f54d203f7281d52e56ef070ec168430ce1aac83a43cf9e80b0f56b0272b516b5bae4957138@127.0.0.1:30001?discport=0"
+```
 
+# 多節點架設
+
+要進行多節點的架設，步驟跟前述的一樣。需要安裝geth、建立帳戶、初始化創世區塊。  
+不過要進行多個節點的連結，創世區塊是要一樣的，所以我們把建立好的`poa.json`複製到第二台機器上。  
+並同樣的在C槽建立一個存放資料的資料夾。我這邊取名為node2。  
+一樣輸入指令`geth --datadir node2 init poa.json`來進行初始化。  
+```
+c:\>geth --datadir node2 init poa.json
+INFO [03-26|11:53:54.100] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [03-26|11:53:54.148] Allocated cache and file handles         database=c:\\node2\\geth\\chaindata cache=16 handles=16
+INFO [03-26|11:53:54.328] Writing custom genesis block
+INFO [03-26|11:53:54.331] Persisted trie from memory database      nodes=1 size=172.00B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [03-26|11:53:54.337] Successfully wrote genesis state         database=chaindata                  hash=43628c…9cd596
+INFO [03-26|11:53:54.341] Allocated cache and file handles         database=c:\\node2\\geth\\lightchaindata cache=16 handles=16
+INFO [03-26|11:53:54.397] Writing custom genesis block
+INFO [03-26|11:53:54.401] Persisted trie from memory database      nodes=1 size=172.00B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [03-26|11:53:54.408] Successfully wrote genesis state         database=lightchaindata                  hash=43628c …9cd596
+```
+## 啟動節點二的geth服務
+同樣的輸入指令`geth --datadir node2 --nodiscover --networkid 15 --port 30002 --rpc --rpcport 8545 console`
+```
+c:\>geth --datadir node2 --nodiscover --networkid 15 --port 30002 --rpc --rpcport 8545 console
+INFO [03-26|12:23:28.702] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [03-26|12:23:28.751] Starting peer-to-peer node               instance=Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5
+INFO [03-26|12:23:28.757] Allocated cache and file handles         database=c:\\node2\\geth\\chaindata cache=512 handles=8192
+INFO [03-26|12:23:28.880] Initialised chain configuration          config="{ChainID: 15 Homestead: 1 DAO: <nil> DAOSupport: false EIP150: 2 EIP155: 3 EIP158: 3 Byzantium: 4 Constantinople: 5  ConstantinopleFix: <nil> Engine: clique}"
+INFO [03-26|12:23:28.888] Initialising Ethereum protocol           versions="[63 62]" network=15
+INFO [03-26|12:23:28.958] Loaded most recent local header          number=0 hash=43628c…9cd596 td=1 age=18h28m58s
+INFO [03-26|12:23:28.963] Loaded most recent local full block      number=0 hash=43628c…9cd596 td=1 age=18h28m58s
+INFO [03-26|12:23:28.967] Loaded most recent local fast block      number=0 hash=43628c…9cd596 td=1 age=18h28m58s
+INFO [03-26|12:23:28.972] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [03-26|12:23:28.975] Stored checkpoint snapshot to disk       number=0 hash=43628c…9cd596
+INFO [03-26|12:23:29.049] New local node record                    seq=1 id=12103e4a8d5b9ac4 ip=127.0.0.1 udp=0 tcp=30002
+INFO [03-26|12:23:29.058] Started P2P networking                   self="enode://7ac3c5fc0d04324915b9376258e4a211c560271b6a25854177d899de29e377be4286ca1df867f2b0aa31eb2f06f80a039067fcb5981442447479c2115ad080d3@127.0.0.1:30002?discport=0"
+INFO [03-26|12:23:29.050] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ipc
+INFO [03-26|12:23:29.075] HTTP endpoint opened                     url=http://127.0.0.1:8545 cors= vhosts=localhost
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5
+INFO [03-26|12:23:29.158] Etherbase automatically configured       address=0x7191d9C4590C82418F6feFdA0da8D0Bc10Eea974
+coinbase: 0x7191d9c4590c82418f6fefda0da8d0bc10eea974
+at block: 0 (Mon, 25 Mar 2019 17:54:30 CST)
+ datadir: c:\node2
+ modules: admin:1.0 clique:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+
+>
+```
+## 取得節點二的節點資訊
+一樣輸入指令`admin.nodeInfo.enode`來取得資訊  
+```
+> admin.nodeInfo.enode
+"enode://7ac3c5fc0d04324915b9376258e4a211c560271b6a25854177d899de29e377be4286ca1df867f2b0aa31eb2f06f80a039067fcb5981442447479c2115ad080d3@127.0.0.1:30002?discport=0"
+```
+# 連結兩個節點
+## 節點一
+首先將節點一的geth服務關閉，輸入指令`exit()`來關閉服務，並重新輸入指令`geth --datadir node --nodiscover --syncmode "full" --networkid 15 --port 30001 --rpc --rpcport 8545 console`  
+增加syncmode參數是為了多節點區塊同步設定的。  
+## 節點二
+同樣的將節點二也新增syncmode參數重啟。
+`geth --datadir node2 --nodiscover --syncmode "full" --networkid 15 --port 30002 --rpc --rpcport 8545 console`
+## 使用admin.addPeer()方式新增節點
+在節點一的命令提示字元輸入`admin.addPeer("enode://7ac3c5fc0d04324915b9376258e4a211c560271b6a25854177d899de29e377be4286ca1df867f2b0aa31eb2f06f80a039067fcb5981442447479c2115ad080d3@Node2 IP Address:30002?discport=0")`
+```
+`@Node2 IP Address:30002`的部分，IP請輸入電腦IP位置  
+
+> admin.addPeer("enode://7ac3c5fc0d04324915b9376258e4a211c560271b6a25854177d899de29e377be4286ca1df867f2b0aa31eb2f06f80a039067fcb5981442447479c2115ad080d3@Node2 IP Address:30002?discport=0")
+true
+```
+然後再輸入`admin.peers`就可以看到連結的狀況了  
+```
+> admin.peers
+
+[{
+    caps: ["eth/62", "eth/63"],
+    enode: "enode://7ac3c5fc0d04324915b9376258e4a211c560271b6a25854177d899de29e377be4286ca1df867f2b0aa31eb2f06f80a039067fcb5981442447479c2115ad080d3@Node 2 IP Address:30002?discport=0",
+    id: "12103e4a8d5b9ac40b44cf703dbc1d0302141e61d952837246024b085c27b754",
+    name: "Geth/v1.8.23-stable-c9427004/windows-amd64/go1.11.5",
+    network: {
+      inbound: false,
+      localAddress: "Node IP Address:62845",
+      remoteAddress: "Node2 IP Address:30002",
+      static: true,
+      trusted: false
+    },
+    protocols: {
+      eth: {
+        difficulty: 1,
+        head: "0x43628c7e28cf98925c630d32645049664422477dddf4394aa0b86eba5c9cd596",
+        version: 63
+      }
+    }
+}]
+>
+```
+若新增失敗，可以將geth應用程式加入防火牆再試試看。  
+# 挖礦
+為了要挖礦，我們要來解鎖帳戶才能進行挖礦的動作。先將節點一的geth服務停止並在node資料夾新增一個txt檔案。  
+我們取名為password，來存放我們的帳戶密碼。  
+並輸入指令`geth --datadir node --nodiscover --syncmode "full" --networkid 15 --port 30001 --rpc --rpcport 8545 --unlock "4b5d920a41e2c6b07cc422f66d4f9e8177530ae1" --password C:/node/password.txt console`  
+然後一樣再連接節點二，然後輸入指令`miner.start()`就可以開始挖礦了  
+這時候就可以看到節點一開始挖礦了，節點二也會跟著同步資訊。  
+節點一:  
+![節點一](img/mine1.png)  
+節點二:  
+![節點二](img/mine2.png)
+如果想要停止挖礦，只要輸入`miner.stop()`就可以了  
+```
+> miner.stop()
+null
+```
+# 相關參考連結
+- [Geth console 指令](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console)
+- [Command Line 指令](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
+- [Go-Ethereum Github](https://github.com/ethereum/go-ethereum)
