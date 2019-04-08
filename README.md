@@ -21,7 +21,7 @@ Step2. 將 Geth 與 Development Tools打勾並按 Next
 ![step2](img/install2.png)  
 
 Step3. 選擇安裝路徑。我這邊直接選擇預設路徑。完成後按Install 開始安裝  
-![step3](img/install2.png)  
+![step3](img/install3.png)  
 
 ## 確認版本
 
