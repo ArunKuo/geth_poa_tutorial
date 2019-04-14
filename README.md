@@ -228,7 +228,7 @@ What would you like to do? (default = stats)
 主要要注意的地方是chainID與alloc的部分，`chainID`代表區塊鏈的網路號碼，而`alloc與ballance`代表要配置Ether(以太幣)的帳戶與以太幣數量。  
 
 # 建立創世區塊
-輸入指令`geth --datadir node init `來進行創世區塊的初始化  
+輸入指令`geth --datadir node init poa.json`來進行創世區塊的初始化  
 
 ```
 c:\>geth --datadir node init poa.json
